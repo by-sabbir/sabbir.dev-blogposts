@@ -14,9 +14,11 @@ models/*.dat
 models/*.xml
 # Distribution / packaging
 .Python
+.vscode
 build/
 develop-eggs/
 dist/
+_test.py
 downloads/
 eggs/
 .eggs/

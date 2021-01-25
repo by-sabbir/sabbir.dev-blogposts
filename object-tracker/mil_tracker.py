@@ -5,10 +5,9 @@ import sys
 def main():
     # trackers covered in this scope-
     # KCF, MIL, TLD, CSRT
-    cap =  cv2.VideoCapture("/home/sabbir/Videos/sattelite.m4v")
+    cap = cv2.VideoCapture("/home/sabbir/Videos/sattelite.m4v")
     tracker = cv2.TrackerMIL_create()
-    _, init_frame = cap.read()
-    # tracker = cv2.Tracker(tracker_name)
+
     bbox = None
     msg = None
     box = None

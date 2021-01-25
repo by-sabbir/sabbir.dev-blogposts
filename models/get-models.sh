@@ -11,6 +11,8 @@ echo "Downloading GOTURN"
 git clone https://github.com/spmallick/goturn-files.git &&
 cat goturn.caffemodel.zip* > goturn.caffemodel.zip &&
 unzip goturn.caffemodel.zip
+cp -v object-tracker/goturn.caffemodel ../object-tracker
+cp -v goturn.prototxt ../object-tracker
 
 echo "##############################"
 echo "Download and Extraction Completed"

@@ -1,7 +1,6 @@
 import cv2
 
 
-
 def main(source):
     cap = cv2.VideoCapture(source)
     tracker = cv2.TrackerGOTURN_create()
@@ -13,6 +12,7 @@ def main(source):
         if not ret:
             print("[ERROR] Cannot read from source")
 
+        tic = cv2.getTickCount()
         if bbox is not None:
             msg, box = tracker.update(frame)
 
@@ -27,7 +27,13 @@ def main(source):
             bbox = cv2.selectROI("GOTURN Tracker", frame, showCrosshair=False, fromCenter=False)
             tracker.init(frame, bbox)
 
+        tac = cv2.getTickCount()
+        fps = cv2.getTickFrequency() // (tac - tic)
+        cv2.putText(frame, f"FPS: {fps}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, .5, (0, 255, 25), 1)
         cv2.imshow("GOTURN Tracker", frame)
+
+    cap.release()
+    cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":

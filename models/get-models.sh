@@ -6,3 +6,11 @@ echo "Download Completed"
 bzip2 -d *.bz2
 echo "##############################"
 echo "Extraction Completed"
+echo "##############################"
+echo "Downloading GOTURN"
+git clone https://github.com/spmallick/goturn-files.git &&
+cat goturn.caffemodel.zip* > goturn.caffemodel.zip &&
+unzip goturn.caffemodel.zip
+
+echo "##############################"
+echo "Download and Extraction Completed"

@@ -7,7 +7,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+goturn.prototxt
+goturn.caffemodel
 # C extensions
 *.so
 models/*.dat

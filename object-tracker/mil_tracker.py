@@ -6,7 +6,6 @@ def main():
     # trackers covered in this scope-
     # KCF, MIL, TLD, CSRT
     cap =  cv2.VideoCapture("/home/sabbir/Videos/sattelite.m4v")
-    tracker_name = "KCF"
     tracker = cv2.TrackerMIL_create()
     _, init_frame = cap.read()
     # tracker = cv2.Tracker(tracker_name)
@@ -25,7 +24,7 @@ def main():
             x, y, w, h = [p for p in box]
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 200, 3), 1)
 
-        cv2.imshow(f"Tracker- {tracker_name}", frame)
+        cv2.imshow(f"MIL Tracker", frame)
 
         if cv2.waitKey(10) & 0xff == 27:
             break
